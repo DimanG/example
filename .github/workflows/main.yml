@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Test
         working-directory: <path to repo>
         shell: java
