@@ -4,9 +4,7 @@ on:
     branches: [master]
 jobs:
     build:
-      runs-on: ubuntu-latest npm ci
-     # run: docker-compose up
-
+      runs-on: ubuntu-latest
 
       steps:
         - uses: actions/checkout@v4
