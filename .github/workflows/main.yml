@@ -13,7 +13,7 @@ jobs:
     steps:
         - name: Test
           working-directory: <path to repo>
-          shell: cmd
+          shell: java
           run: ${{ secrets.PULL }}
        # - uses: actions/setup-java@v4
 
