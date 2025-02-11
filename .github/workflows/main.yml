@@ -2,6 +2,7 @@ name: FirstProgram
 on:
   push:
     branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,6 +13,7 @@ jobs:
         working-directory: <path to repo>
         shell: java
         run: ${{ secrets.PULL }}
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
