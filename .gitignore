@@ -1,5 +1,4 @@
 ### IntelliJ IDEA ###
-out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
@@ -17,7 +16,6 @@ bin/
 
 ### NetBeans ###
 /nbproject/private/
-/nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
@@ -26,5 +24,3 @@ bin/
 .vscode/
 
 ### Mac OS ###
-.DS_Store
-/.idea/workflows/
