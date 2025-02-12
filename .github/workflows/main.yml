@@ -16,7 +16,7 @@ jobs:
           distribution: 'temurin'
      # - run: mvn install:install-file "-Dfile=example.jar" "-DgroupId=com.cobra" "-DartifactId=cobra" "-Dversion=0.98.4" "-Dpackaging=jar" "-DgeneratePom=true"
      # - run: mvn --batch-mode --update-snapshots verify
-      - run: mkdir staging && cp *./*.jar staging
+      - run: mkdir staging && cp out/artifacts/example_jar/*.jar staging
       - uses: actions/upload-artifact@v4
         with:
           name: Package
