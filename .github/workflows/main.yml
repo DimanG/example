@@ -12,7 +12,7 @@ jobs:
 
       - name: Test
         working-directory: <path to repo>
-        shell: java
+        shell: javac
         run: ${{ secrets.PULL }}
 
       - name: Upload build artifacts
