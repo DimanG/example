@@ -12,7 +12,7 @@ jobs:
 
       - name: Run Test
         working-directory: <path to repo>
-        shell: cmd, javac
+        shell: cmd
         run: ${{ secrets.PULL }}
 
       - name: Log in to GitHub Container Registry
