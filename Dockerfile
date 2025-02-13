@@ -14,7 +14,7 @@ COPY src ./src
 # Збираємо JAR-файл
 RUN mvn clean package -DskipTests
 
-RUN ls -lah /app/target/
+RUN ls -lah /app
 
 # Використовуємо офіційний JDK-образ для запуску застосунку
 FROM eclipse-temurin:17-jdk
