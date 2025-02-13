@@ -16,6 +16,29 @@ jobs:
             # Крок 3: Збираємо артефакт через Maven
       - name: Build with Maven
         run: mvn clean package -DskipTests
+          # Крок 4: Завантажуємо JAR-файл як артефакт
+      - name: Upload JAR Artifact
+        uses: actions/upload-artifact@v4
+        with:
+         name: example-jar
+         path: target/example-1.0-SNAPSHOT.jar
+
+          # Крок 5: Логін в GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+          # Крок 6: Створення Docker образу
+      - name: Build Docker image
+        run: | 
+          docker build -t ghcr.io/${{ github.actor }}/my-java-app:${{ github.sha }} .
+        
+         # Крок 7: Публікація Docker образу в GitHub Container Registry
+      - name: Push Docker image
+        run: docker push ghcr.io/${{ github.actor }}/my-java-app:${{ github.sha }}
       - run: mkdir staging && cp out/artifacts/example_jar/*.jar staging
       - run: java -jar  out/artifacts/example_jar/*.jar
       - uses: actions/upload-artifact@v4
