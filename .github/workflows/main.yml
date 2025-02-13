@@ -37,6 +37,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
 
+
+
           # Крок 6: Створення Docker образу
       - name: Build Docker image
         run: |
