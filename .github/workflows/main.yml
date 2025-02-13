@@ -42,6 +42,8 @@ jobs:
           docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
         
 
+
+
       # Крок 7: Публікація Docker образу в GitHub Container Registry
       - name: Push Docker image
         run: docker push ghcr.io/${{ github.actor }}/app:${{ github.sha }}
