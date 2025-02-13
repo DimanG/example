@@ -15,7 +15,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '23'
           distribution: 'temurin'
             # Крок 3: Збираємо артефакт через Maven
       - name: Build with Maven
