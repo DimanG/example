@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Інформація про ваш проект -->
+    <groupId>com.example</groupId>
+    <artifactId>helloworld</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Додайте тут свої залежності, якщо вони потрібні -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Плагін для компіляції коду -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>  <!-- Версія Java для компіляції -->
+                    <target>1.8</target>  <!-- Версія Java для компіляції -->
+                </configuration>
+            </plugin>
+
+            <!-- Плагін для створення JAR файлу з манифестом -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <!-- Вкажіть повний шлях до вашого головного класу -->
+                            <Main-Class>org.example.Main</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
