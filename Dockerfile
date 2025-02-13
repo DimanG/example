@@ -17,7 +17,7 @@ RUN mvn clean package -DskipTests
 RUN ls -lah /app/target/
 
 # Використовуємо офіційний JDK-образ для запуску застосунку
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:23-jdk
 
 # Встановлюємо робочу директорію
 WORKDIR /app
