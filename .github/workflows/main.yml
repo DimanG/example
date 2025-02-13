@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: example-jar
-         path: target/example-1.0-SNAPSHOT.jar
+         path: target/example.jar
 
           # Крок 5: Логін в GitHub Container Registry
       - name: Log in to GitHub Container Registry
