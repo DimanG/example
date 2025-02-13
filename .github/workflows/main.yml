@@ -39,11 +39,11 @@ jobs:
           # Крок 6: Створення Docker образу
       - name: Build Docker image
         run: | 
-          docker build -t ghcr.io/${{ github.actor }}/my-java-app:${{ github.sha }} .
+          docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
         
       # Крок 7: Публікація Docker образу в GitHub Container Registry
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.actor }}/my-java-app:${{ github.sha }}
+        run: docker push ghcr.io/${{ github.actor }}/app:${{ github.sha }}
       #- run: mkdir staging && cp out/artifacts/example_jar/*.jar staging
       #- run: java -jar  out/artifacts/example_jar/*.jar
       #- uses: actions/upload-artifact@v4
