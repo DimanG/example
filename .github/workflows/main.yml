@@ -37,9 +37,9 @@ jobs:
 
 
           # Крок 6: Створення Docker образу
-      - name: Build Docker image
-        run: | 
-          docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
+   #   - name: Build Docker image
+    #    run: |
+    #      docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
         
 
 
