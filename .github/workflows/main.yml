@@ -25,7 +25,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: example-jar
-         path: ./out/artifacts/example_jar/example.jar
+         path: target/example.jar
+        # path: ./out/artifacts/example_jar/example.jar
 
           # Крок 5: Логін в GitHub Container Registry
       - name: Log in to GitHub Container Registry
@@ -37,9 +38,9 @@ jobs:
 
 
           # Крок 6: Створення Docker образу
-   #   - name: Build Docker image
-    #    run: |
-    #      docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.actor }}/app:${{ github.sha }} .
         
 
 

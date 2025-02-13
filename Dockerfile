@@ -14,7 +14,7 @@ COPY src ./src
 # Збираємо JAR-файл
 RUN mvn clean package -DskipTests
 
-RUN ls -lah /app
+RUN ls -lah /app/target/
 
 # Використовуємо офіційний JDK-образ для запуску застосунку
 FROM eclipse-temurin:17-jdk
@@ -23,7 +23,7 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Копіюємо зібраний JAR-файл з попереднього контейнера
-COPY --from=build ./example/out/artifacts/example_jar/example.jar /app/example.jar
+COPY --from=build /app/target/example.jar /app/example.jar
 
 # Вказуємо команду для запуску застосунку
 CMD ["java", "-jar", "example.jar"]
