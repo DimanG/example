@@ -23,7 +23,7 @@ FROM eclipse-temurin:23-jdk
 WORKDIR /app/temp
 
 # Копіюємо зібраний JAR-файл з попереднього контейнера
-COPY --from=build /app/temp/example.jar /app/example.jar
-
+#COPY --from=build /app/temp/example.jar /app/example.jar
+COPY --from=build ./out/artifacts/example_jar/example.jar /app/example.jar
 # Вказуємо команду для запуску застосунку
 CMD ["java", "-jar", "example.jar"]
