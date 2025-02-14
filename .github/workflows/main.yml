@@ -42,8 +42,8 @@ jobs:
         
 
       # Крок 7: Публікація Docker образу в GitHub Container Registry
-     # - name: Push Docker image
-     #   run: docker push ghcr.io/${{ github.actor }}/app:${{ github.sha }}
+      - name: Push Docker image
+        run: docker push ghcr.io/${{ github.actor }}/app:${{ github.sha }}
       #- run: mkdir staging && cp out/artifacts/example_jar/*.jar staging
       #- run: java -jar  out/artifacts/example_jar/*.jar
       #- uses: actions/upload-artifact@v4
