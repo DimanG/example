@@ -2,7 +2,6 @@ name: FirstProgram
 on:
   push:
     branches: [master]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,8 +24,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: example-jar
-         #path: /app/example.jar
-         path: ./out/artifacts/example_jar/example.jar
+         path: /app/example.jar
+         #path: ./out/artifacts/example_jar/example.jar
 
           # Крок 5: Логін в GitHub Container Registry
       - name: Log in to GitHub Container Registry
@@ -36,16 +35,11 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-
-
-
           # Крок 6: Створення Docker образу
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/${{ github.actor }}/myapp:${{ github.sha }} .
         
-
-
 
       # Крок 7: Публікація Docker образу в GitHub Container Registry
      # - name: Push Docker image
