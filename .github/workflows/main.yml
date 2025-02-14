@@ -25,7 +25,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
          name: example-jar
-         path: ./out/artifacts/example_jar/example.jar
+         path: ./temp/example.jar
         # path: ./out/artifacts/example_jar/example.jar
 
           # Крок 5: Логін в GitHub Container Registry
